@@ -14,12 +14,13 @@ export default function userReducer(state = defaultState, action) {
             return {...state, list: state.list.filter((item, index) => index !== action.payload)};
         }
         case "UPDATE_LIST": {
-            return {...state, list: state.list.map((item, index) => {
-                if (index === action.payload[1]) {
-                    return {...item, task: action.payload[0]};
-                } else {
-                    return item;
-                }
+            return {
+                ...state, list: state.list.map((item, index) => {
+                    if (index === action.payload[1]) {
+                        return { ...item, task: action.payload[0] };
+                    } else {
+                        return item;
+                    }
                 })
             }
         }

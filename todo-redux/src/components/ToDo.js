@@ -38,7 +38,7 @@ class ToDo extends Component {
 
   updateItem = (event, itemIndex) => {
     const { value } = event.target;
-    this.props.updateList([event, itemIndex]);
+    this.props.updateList([value, itemIndex]);
   }
 
   render() {
